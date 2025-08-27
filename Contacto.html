@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Paula Mañuzca | Diseñadora Gráfica e Ilustradora</title>
+	<link href="photos/LOGO.webp" rel="icon" type="image/svg+xml">
+    <!-- Bootstrap 4.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-salmon: #FF8A80;
+            --color-rosa: #F8BBD0;
+            --color-rosa-claro: #FCE4EC;
+            --color-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-oscuro);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .bg-rosa {
+            background-color: var(--color-rosa-claro);
+        }
+        
+        .bg-salmon {
+            background-color: var(--color-salmon);
+        }
+        
+        .text-salmon {
+            color: var(--color-salmon);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--color-salmon) !important;
+        }
+        
+        .nav-link {
+            color: var(--color-oscuro) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+            margin: 0 10px;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-salmon) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-salmon);
+            border-color: var(--color-salmon);
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #E57A70;
+            border-color: #E57A70;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline-primary {
+            color: var(--color-salmon);
+            border-color: var(--color-salmon);
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--color-salmon);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-hero {
+            background: linear-gradient(135deg, var(--color-rosa-claro) 0%, var(--color-rosa) 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+            border-radius: 0 0 50% 50% / 0 0 30% 30%;
+            overflow: hidden;
+        }
+        
+        .contact-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            height: 100%;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--color-salmon);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-icon {
+            font-size: 1.5rem;
+            color: var(--color-salmon);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .form-btn {
+            display: block;
+            width: 100%;
+            margin: 30px 0;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background-color: var(--color-oscuro);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer a {
+            color: var(--color-rosa);
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: var(--color-salmon);
+            text-decoration: none;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 12px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--color-salmon);
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 45px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-salmon);
+            border-radius: 2px;
+        }
+        
+        .center-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero {
+                padding: 80px 0 60px;
+                border-radius: 0 0 30% 30% / 0 0 15% 15%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-card {
+                padding: 25px;
+            }
+        }
+    </style>
+    <link href="css/pauestilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Paula Mañuzca</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Contacto.html">Contacto <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero bg-fondo">
+        <div class="container">
+          <h1 class="contact-title font-weight-bold">Hablemos</h1>
+            <p class="lead">¿Tienes un proyecto en mente? Me encantaría conocerlo y ayudarte a hacerlo realidad.</p>
+        </div>
+    </section>
+
+    <!-- Formulario Simplificado -->
+    <section class="py-5">
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center section-title center-title">¿Cómo podemos trabajar juntos?</h2>
+                    <p class="text-center mb-5">Completa el formulario con información básica sobre tu proyecto y me pondré en contacto contigo lo antes posible.</p>
+                    
+                  <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Formulario de contacto</h3>
+                    <p>Para agilizar el proceso y entender mejor tus necesidades, he preparado un formulario sencillo con preguntas sobre tu proyecto.</p>
+                        
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_ON8elFMx_k45Hw0I4i7A4bu19Is5Zfi7VWykZAtsOmEslw/viewform" class="btn btn-primary form-btn" target="_blank">
+                          <i class="fas fa-external-link-alt mr-2"></i> Ir al formulario de contacto
+                      </a>
+                        
+                      <p class="small">Al hacer clic serás redirigido a un formulario de Google Forms seguro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="py-5 bg-rosa">
+        <div class="container py-5">
+            <h2 class="text-center section-title center-title mt-5">Otras formas de contactarme</h2>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                  <div class="contact-card text-center">
+                    <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    <h4>Correo electrónico</h4>
+                    <p>Envíame un email directamente y te responderé enseguida</p>
+                      <a href="mailto:paulamanuzca@gmail.com" class="btn btn-outline-primary">paulamanuzca@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                  <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    <h4>Teléfono</h4>
+                    <p>Llámame o envíame un WhatsApp</p>
+                      <a href="tel:+34612345678" class="btn btn-outline-primary">+57 300 660 8417&nbsp;</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4>Reunión virtual</h4>
+                        <p>Agenda una videollamada conmigo</p>
+                        <a href="https://calendly.com/paulmanuzca" class="btn btn-outline-primary" target="_blank">Agendar cita</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-6 mx-auto">
+                    <div class="contact-card">
+                        <h4 class="text-center">Horario de atención</h4>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Lunes a Viernes</h5>
+                                <p class="text-left">9:00 - 18:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-left">Sábados</h5>
+                                <p>10:00 - 14:00 (solo por email)</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Domingos</h5>
+                                <p class="text-left">Descanso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales -->
+<section class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center section-title center-title">Sígueme en redes sociales</h2>
+            <p class="text-center mb-5">Mira mi trabajo diario y conoce más sobre mi proceso creativo</p>
+            
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h4>Instagram</h4>
+                        <p>Ilustraciones y detrás de cámaras</p>
+                        <a href="https://www.instagram.com/paulart_studi0/" class="btn btn-outline-primary" target="_blank">@paulart_studi0</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fab fa-behance"></i>
+                        </div>
+                        <h4>Behance</h4>
+                        <p>Proyectos completos y casos de estudio</p>
+                        <a href="https://www.behance.net/paulamauzca" class="btn btn-outline-primary" target="_blank">Ver portafolio</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                  <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                    <h4>LinkedIn</h4>
+                      <p>Experiencia profesional</p>
+                      <a href="https://www.linkedin.com/in/paula-katerin-ma%C3%B1uzca-1192102b8/" class="btn btn-outline-primary" target="_blank">Conectar</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fab fa-pinterest"></i>
+                        </div>
+                        <h4>Pinterest</h4>
+                        <p>Inspiración y tableros de referencia</p>
+                        <a href="https://co.pinterest.com/paulamanuzca/" class="btn btn-outline-primary" target="_blank">Seguir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h4>Paula Mañuzca</h4>
+            <p>Diseñadora gráfica e ilustradora especializada en crear mundos de color y fantasía.</p>
+            <div class="social-icons mt-3"> <a href="https://www.instagram.com/paulart_studi0/"><i class="fab fa-instagram"></i></a> <a href="https://www.behance.net/paulamauzca"><i class="fab fa-behance"></i></a> <a href="https://www.linkedin.com/in/paula-katerin-ma%C3%B1uzca-1192102b8/"><i class="fab fa-linkedin-in"></i></a> <a href="https://co.pinterest.com/paulamanuzca/"><i class="fab fa-pinterest-p"></i></a> </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4">
+            <h5>Navegación</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="portafolio.html">Portafolio</a></li>
+              <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4">
+            <h5>Servicios</h5>
+            <ul class="list-unstyled">
+              <li><a href="portafolio.html">Ilustración personalizada</a></li>
+              <li><a href="portafolio.html">Diseño de personajes</a></li>
+              <li><a href="portafolio.html">Identidad visual</a></li>
+              <li><a href="portafolio.html">Diseño editorial</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-envelope mr-1"></i> &nbsp;paulamanuzca@gmail.com</li>
+              <li><i class="fas fa-phone mr-2"></i> +57 300 660 8417</li>
+              <li><i class="fas fa-map-marker-alt mr-2"></i> Bogotá, Colombia</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="bg-light">
+        <div class="row pt-3">
+          <div class="col-md-6 text-center text-md-left">
+            <p class="mb-0">© 2025 Paula Mañuzca. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-right">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"></li>
+              <li class="list-inline-item"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer -->
+    
+    <!-- Bootstrap JS dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

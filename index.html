@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paula Mañuzca | Diseñadora Gráfica e Ilustradora</title>
+	<link href="photos/LOGO.webp" rel="icon" type="image/svg+xml">
+    <!-- Bootstrap 4.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-salmon: #FF8A80;
+            --color-rosa: #F8BBD0;
+            --color-rosa-claro: #FCE4EC;
+            --color-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-oscuro);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .bg-rosa {
+            background-color: var(--color-rosa-claro);
+        }
+        
+        .bg-salmon {
+            background-color: var(--color-salmon);
+        }
+        
+        .text-salmon {
+            color: var(--color-salmon);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--color-salmon) !important;
+        }
+        
+        .nav-link {
+            color: var(--color-oscuro) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+            margin: 0 10px;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-salmon) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-salmon);
+            border-color: var(--color-salmon);
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #E57A70;
+            border-color: #E57A70;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline-primary {
+            color: var(--color-salmon);
+            border-color: var(--color-salmon);
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--color-salmon);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-rosa-claro) 0%, var(--color-rosa) 100%);
+            padding: 150px 0 120px;
+            border-radius: 0 0 50% 50% / 0 0 30% 30%;
+            overflow: hidden;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 138, 128, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 12px;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .footer {
+            background-color: var(--color-oscuro);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer a {
+            color: var(--color-rosa);
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: var(--color-salmon);
+            text-decoration: none;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 12px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--color-salmon);
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 45px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-salmon);
+            border-radius: 2px;
+        }
+        
+        .center-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card .quote-icon {
+            font-size: 36px;
+            color: var(--color-rosa);
+            margin-bottom: 20px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-salmon);
+            margin-bottom: 20px;
+        }
+        
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .featured-project {
+            margin-bottom: 40px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section {
+                padding: 100px 0 80px;
+                border-radius: 0 0 30% 30% / 0 0 15% 15%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Paula Mañuzca</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="hero-title font-weight-bold">Ilustración con alma y color</h1>
+                    <p class="lead my-4">Diseño gráfico e ilustración que transforma ideas en experiencias visuales únicas y memorables.</p>
+                    <a href="contacto.html" class="btn btn-primary btn-lg">Trabajemos juntos <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="col-md-6">
+                    <img src="photos/WhatsApp Image 2025-08-19 at 1.53.25 PM.jpeg" alt="Ilustración de Paula Mañuzca" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Sobre mí</h2>
+                    <p>Hola, soy Paula Mañuzca, estudiante de 7mo semestre de diseño gráfico e ilustradora con 2 años de experiencia creando soluciones visuales impactantes.</p>
+                    <p>Mi especialidad es la ilustración análoga y digital,&nbsp; &nbsp;con un enfoque en personajes vibrantes y mundos imaginativos. Cada proyecto es una nueva oportunidad para contar una historia a través del color y la forma.</p>
+                    <p>Mi trabajo se caracteriza por el uso de paletas coloridas, trazos expresivos y la capacidad de capturar emociones en cada ilustración.</p>
+                    <a href="portafolio.html" class="btn btn-outline-primary mt-3">Ver mi trabajo <i class="fas fa-eye ml-2"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="photos/WhatsApp Image 2025-08-18 at 6.54.34 PM.jpeg" alt="Foto de Paula Mañuzca" class="img-fluid about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-5 bg-rosa">
+        <div class="container py-5">
+            <h2 class="text-center section-title center-title mx-auto">Servicios de diseño</h2>
+            <p class="text-center lead mb-5">Ofrezco soluciones creativas adaptadas a las necesidades de cada cliente</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Ilustración personalizada</h4>
+                        <p>Creación de ilustraciones únicas para proyectos editoriales, packaging, productos y más.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h4>Diseño de personajes</h4>
+                        <p>Desarrollo de personajes con personalidad y estilo para animación, videojuegos o branding.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Identidad visual</h4>
+                        <p>Diseño de logotipos, paletas de color y elementos gráficos para construir marcas memorables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Destacados -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Proyectos destacados</h2>
+            <p class="mb-5">Una selección de mis trabajos más recientes en ilustración y diseño.</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="featured-project">
+                        <div class="portfolio-item">
+                            <img src="photos/diseño de papeleria.png" class="img-fluid" alt="Proyecto 1">
+                            <div class="portfolio-overlay"> </div>
+                        </div>
+                        <h4 class="project-title">Papelería&nbsp;</h4>
+                        <p>Diseño de papelería para empresas y festivales&nbsp;</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="featured-project">
+                        <div class="portfolio-item">
+                            <img src="photos/PERSONAJES.png" class="img-fluid" alt="Proyecto 2">
+                            <div class="portfolio-overlay"> </div>
+                        </div>
+                        <h4 class="project-title">Personajes</h4>
+                        <p>Diseño de personajes para aplicación educativa</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="featured-project">
+                        <div class="portfolio-item">
+                            <img src="photos/AURURM.png" class="img-fluid" alt="Proyecto 3">
+                            <div class="portfolio-overlay"> </div>
+                        </div>
+                        <h4 class="project-title">Aurum</h4>
+                        <p>Proyecto personal de 6to semestre</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="portafolio.html" class="btn btn-outline-primary">Ver más proyectos <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5 bg-rosa">
+        <div class="container py-5">
+            <h2 class="text-center section-title center-title mx-auto">Lo que dicen mis clientes</h2>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="mb-3">Paula transformó completamente nuestra marca con sus ilustraciones. Capturó perfectamente la esencia de lo que queríamos transmitir y el feedback de nuestros clientes ha sido increíble.</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://placehold.co/50x50/FF8A80/FFFFFF?text=C" alt="Cliente" class="rounded-circle mr-3">
+                            <div>
+                                <h5 class="mb-0">Carlos Mendoza</h5>
+                                <small class="text-muted">EcoNatural Products</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="mb-3">Trabajar con Paula fue una experiencia excepcional. Su capacidad para interpretar ideas abstractas y convertirlas en ilustraciones llenas de vida y color superó todas nuestras expectativas.</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://placehold.co/50x50/F8BBD0/333333?text=M" alt="Cliente" class="rounded-circle mr-3">
+                            <div>
+                                <h5 class="mb-0">María López</h5>
+                                <small class="text-muted">Editorial Luna</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>Paula Mañuzca</h4>
+                    <p>Diseñadora gráfica e ilustradora especializada en crear mundos de color y fantasía.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.instagram.com/paulart_studi0/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.behance.net/paulamauzca"><i class="fab fa-behance"></i></a>
+                        <a href="https://www.linkedin.com/in/paula-katerin-ma%C3%B1uzca-1192102b8/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://co.pinterest.com/paulamanuzca/"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="portafolio.html">Ilustración personalizada</a></li>
+                        <li><a href="portafolio.html">Diseño de personajes</a></li>
+                        <li><a href="portafolio.html">Identidad visual</a></li>
+                        <li><a href="portafolio.html">Diseño editorial</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+             
+                        <li><i class="fas fa-envelope mr-1"></i> &nbsp;paulamanuzca@gmail.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +57 300 660 8417</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Bogotá, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row pt-3">
+                <div class="col-md-6 text-center text-md-left">
+                    <p class="mb-0">© 2025 Paula Mañuzca. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
